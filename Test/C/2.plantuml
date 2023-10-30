@@ -1,0 +1,29 @@
+@startuml Poligono
+object "Triangulo1:Poligono" as T1
+object "Triangulo2:Poligono" as T2
+
+object ":Punto" as P1{
+    cord_x = "0"
+    cord_y = "0"
+}
+object ":Punto" as P2{
+    cord_x = "5"
+    cord_y = "0"
+}
+object ":Punto" as P3{
+    cord_x = "10"
+    cord_y = "0"
+}
+object ":Punto" as P4{
+    cord_x = "5"
+    cord_y = "5"
+}
+
+P1 -LEFT- T1
+P2 -up- T1
+P4 -- T1
+
+P2 -up- T2
+P3 -right- T2
+P4 -- T2
+@enduml

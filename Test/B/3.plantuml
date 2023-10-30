@@ -1,0 +1,8 @@
+@startuml Pitagoras
+class Triangulo
+class Poligono
+class Lado
+
+Triangulo -up-|> Poligono
+Triangulo *-- "3" Lado
+@enduml

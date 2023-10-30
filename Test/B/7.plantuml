@@ -1,0 +1,8 @@
+@startuml Clasificacion
+class Caracterización
+class Criterio
+class Elemento_Clasificado
+
+Caracterización *-- "1..*" Criterio
+(Caracterización, Criterio) .. Elemento_Clasificado
+@enduml

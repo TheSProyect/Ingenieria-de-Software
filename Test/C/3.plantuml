@@ -1,0 +1,25 @@
+@startuml Cuadrado
+object "Cuadrado:Poligono" as C1
+
+object ":Punto" as P1{
+    cord_x = "0"
+    cord_y = "0"
+}
+object ":Punto" as P2{
+    cord_x = "0"
+    cord_y = "1"
+}
+object ":Punto" as P3{
+    cord_x = "1"
+    cord_y = "0"
+}
+object ":Punto" as P4{
+    cord_x = "1"
+    cord_y = "1"
+}
+
+P1 -UP- C1
+P2 -RIGHT- C1
+P3 -LEFT- C1
+P4 -DOWN- C1
+@enduml

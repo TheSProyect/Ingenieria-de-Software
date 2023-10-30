@@ -1,0 +1,9 @@
+@startuml HardDrive
+class Disco_Duro
+class Sector
+class Pista
+
+Disco_Duro *-- Pista
+Pista *-- Sector 
+
+@enduml

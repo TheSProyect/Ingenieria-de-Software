@@ -1,0 +1,8 @@
+@startuml Baseball
+class Equipo
+class Jugador
+class Estadio
+
+Equipo *-- "2..*" Jugador
+Equipo -right- Estadio : tiene asginado como homeclub >
+@enduml

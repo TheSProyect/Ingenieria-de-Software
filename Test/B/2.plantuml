@@ -1,0 +1,11 @@
+@startuml Sistema Educativo
+
+class Persona 
+class Profesor
+class Estudiante
+class Empleado
+
+Profesor -up-|> Empleado
+Estudiante -up-|> Persona
+Empleado -up-|> Persona
+@enduml

@@ -1,0 +1,21 @@
+@startuml Documento Grafico
+class Documento_Grafico
+class Hoja
+Class Objeto_Dibujo
+Class Texto 
+class Figura_2D
+class Grupo
+class Circulo
+class Cuadrado
+
+
+Documento_Grafico *-- Hoja
+Hoja -- Objeto_Dibujo
+Figura_2D -up-|> Objeto_Dibujo
+Grupo --|> Objeto_Dibujo
+Texto -up-|> Objeto_Dibujo
+
+Grupo o- "2..*" Objeto_Dibujo
+Cuadrado -up-|> Figura_2D
+Circulo -up-|> Figura_2D
+@enduml

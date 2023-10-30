@@ -1,0 +1,12 @@
+@startuml
+class Laboratorio
+class Laboratorio_Nuclear
+class Equipo
+class Equipo_Nuclear
+
+Equipo_Nuclear -up-|> Equipo
+Laboratorio_Nuclear -up-|> Laboratorio
+
+Laboratorio o-right- "*" Equipo
+Laboratorio_Nuclear o-right- "*" Equipo_Nuclear
+@enduml

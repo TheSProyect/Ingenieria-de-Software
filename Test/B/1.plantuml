@@ -1,0 +1,7 @@
+@startuml Piano 
+left to right direction
+class Teclado
+class Tecla
+
+Teclado o--- "105...*" Tecla
+@enduml

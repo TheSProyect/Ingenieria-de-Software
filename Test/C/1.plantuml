@@ -1,0 +1,9 @@
+@startuml Poligono
+class Poligono
+class Punto{
+    cord_x
+    cord_y
+}
+
+Poligono -- Punto
+@enduml
