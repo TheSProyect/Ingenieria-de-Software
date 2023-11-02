@@ -49,7 +49,7 @@ object ":Entrenador" as T1{
 
 P1 -right-* E1
 P2 -right-* E2
-T1 --o E1
+T1 -- E1
 C1 -left-* E1
 C2 -left-* E2
 E1 -- E2
