@@ -27,7 +27,7 @@ Jugador --|> Persona
 Capitan --|> Jugador
 
 Equipo_Volleyball *-- "6..20" Jugador
-Equipo_Volleyball *-- Capitan
+Equipo_Volleyball -- Capitan
 Equipo_Volleyball "*" o-- Entrenador
 Equipo_Volleyball -left- Equipo_Volleyball
 (Equipo_Volleyball,Equipo_Volleyball) .. Juego
