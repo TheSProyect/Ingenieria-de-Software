@@ -1,0 +1,45 @@
+@startuml 
+
+skinparam style strictuml
+
+class "Administrador" as Admin
+
+class "Certificado" as Certify
+
+class "Usuario" as User
+
+class "Registro" as Register
+
+class "Examen" as Exam
+
+class "Pregunta" as Question
+
+class "Instrucciones" as Instructions
+
+class "Texto" as Text
+
+class "Codigo" as Code
+
+class "Respuesta" as Answer
+
+class "Persona" as Human
+
+class "Resumen" as Summary
+
+class "Profesor" as Teacher
+
+class "Estudiante" as Student
+
+class "Mensaje" as Message
+
+class "Perfil" as Profile
+
+class "Justificacion" as Justification
+
+class "Explicacion" as Explanation
+
+class "Ayuda" as Help
+
+class "Dominio" as Domain
+
+@enduml
