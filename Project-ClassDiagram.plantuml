@@ -4,42 +4,66 @@ skinparam style strictuml
 
 class "Administrador" as Admin
 
-class "Certificado" as Certify
+class "Certificado" as Certify {
+    string Nombre
+    string Apellido
+    string Profesor
+    string Curso
+
+}
 
 class "Usuario" as User
 
-class "Registro" as Register
-
-class "Examen" as Exam
+class "Examen" as Exam {
+    int Duracion 
+    int Cantidad_Preguntas
+}
 
 class "Pregunta" as Question
 
 class "Instrucciones" as Instructions
 
-class "Texto" as Text
-
-class "Codigo" as Code
-
-class "Respuesta" as Answer
-
-class "Persona" as Human
+class "Respuesta" as Answer{
+    bool Correcta
+}
 
 class "Resumen" as Summary
 
-class "Profesor" as Teacher
-
-class "Estudiante" as Student
-
-class "Mensaje" as Message
-
-class "Perfil" as Profile
-
-class "Justificacion" as Justification
+class "Perfil" as Profile {
+    string Correo
+    string Contraseña
+}
 
 class "Explicacion" as Explanation
 
 class "Ayuda" as Help
 
 class "Dominio" as Domain
+
+Exam -- Domain
+
+User -- Profile
+
+Answer -- Explanation
+
+Admin -- Exam
+
+Admin -- "0..*" User : Registra
+
+User -- Instructions : Acepta
+
+Question *-- "4..*" Answer 
+
+User -r- Exam
+
+User -- Help
+
+Exam -r- Question
+
+Question --o "1..*" Domain
+
+Summary -r-o Certify
+
+Certify -- User
 
 @enduml
