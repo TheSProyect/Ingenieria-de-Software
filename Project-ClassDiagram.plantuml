@@ -71,11 +71,11 @@ Code "*" --* Answer
 
 Code "*" --* Question
 
-Summary --> "*" Exam : Resume
+Summary ..> "*" Exam : Resume
 
-User --> Help : Consulta
+User "0..*" --> Help : Consulta
 
-User --> Message : Lee
+User --> "0..*" Message : Lee
 
 Exam --> Message : Genera
 
