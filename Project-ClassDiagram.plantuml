@@ -5,65 +5,78 @@ skinparam style strictuml
 class "Administrador" as Admin
 
 class "Certificado" as Certify {
-    string Nombre
-    string Apellido
-    string Profesor
-    string Curso
-
+    Nombre
+    Apellido
+    Profesor
+    Curso
+    Tipo_Examen_Practicado
 }
 
-class "Usuario" as User
+class "Usuario" as User {
+    Correo
+    Contraseña
+}
 
 class "Examen" as Exam {
-    int Duracion 
-    int Cantidad_Preguntas
+    Tipo
+    Duracion 
+    Cantidad_Preguntas
+    Instrucciones
 }
 
-class "Pregunta" as Question
-
-class "Instrucciones" as Instructions
+class "Pregunta" as Question{
+    Dominio
+    Respondida
+}
 
 class "Respuesta" as Answer{
-    bool Correcta
+    
 }
 
-class "Resumen" as Summary
-
-class "Perfil" as Profile {
-    string Correo
-    string Contraseña
+class "Resumen" as Summary{
+    Preguntas_Aprobadas
+    Preguntas_Reprobadas
 }
 
 class "Explicacion" as Explanation
 
+class "Linea" as Code {
+    Texto 
+    Codigo
+}
+
 class "Ayuda" as Help
 
-class "Dominio" as Domain
+class "Mensaje" as Message {
+    Resultado
+}
 
-Exam -- Domain
+Question o-- Explanation
 
-User -- Profile
+Admin --> "0..*" Exam : Crea
 
-Answer -- Explanation
+Admin --> "0..*" User : Registra
 
-Admin -- Exam
+Question *-r- "4..*" Answer 
 
-Admin -- "0..*" User : Registra
+User -r- "0..*" Exam : Presenta
 
-User -- Instructions : Acepta
+Exam *-r- "*" Question
 
-Question *-- "4..*" Answer 
+Summary -l-o Certify 
 
-User -r- Exam
+Certify "0..*" <-down- User : Obtiene
 
-User -- Help
+Code "*" --* Answer
 
-Exam -r- Question
+Code "*" --* Question
 
-Question --o "1..*" Domain
+Summary --> "*" Exam : Resume
 
-Summary -r-o Certify
+User --> Help : Consulta
 
-Certify -- User
+User --> Message : Lee
+
+Exam --> Message : Genera
 
 @enduml
